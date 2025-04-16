@@ -3,28 +3,29 @@ import { add, divide, multiply, subtract } from '../src/mathUtils.js';
 
 describe('Math Utils', () => {
   describe('Add', () => {
-    it("Возвращает сумму двух чисел", () => {
+    it("Returns the sum of two numbers", () => {
       expect(add(3, 2)).to.equal(5);
     });
   });
 
   describe("Subtract", () => {
-    it("Возвращает разницу двух чисел", () => {
+    it("Returns the difference of two numbers", () => {
       expect(subtract(5, 2)).to.equal(3);
     });
   });
 
   describe("Multiply", () => {
-    it("Возвращает произведение двух чисел", () => {
+    it("Returns the product of two numbers", () => {
       expect(multiply(4, 5)).to.equal(20);
     });
   });
 
   describe("Divide", () => {
-    it("Возвращает частное двух чисел", () => {
+    it("Returns the quotient of two numbers", () => {
       expect(divide(6, 2)).to.equal(3);
     });
-    it('Ошибка при делении на ноль', () => {
+
+    it('Throws an error when dividing by zero', () => {
       expect(() => divide(5, 0)).to.throw("Cannot divide by zero");
     });
   });

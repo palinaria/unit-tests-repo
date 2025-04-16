@@ -3,35 +3,35 @@ import { capitalize, reverseString, isPalindrome } from '../src/stringUtils.js';
 
 describe('String Utils', () => {
   describe('capitalize', () => {
-    it("Делает первую букву заглавной", () => {
+    it("Capitalizes the first letter of the string", () => {
       expect(capitalize('chanel')).to.equal('Chanel');
     });
 
-    it('Выбрасывает ошибку, если входной параметр не строка', () => {
+    it('Throws an error if input is not a string', () => {
       expect(() => capitalize(123)).to.throw("Input must be a string");
     });
   });
 
   describe('reverseString', () => {
-    it("Отражает строку", () => {
+    it("Reverses the string", () => {
       expect(reverseString('drawer')).to.equal('reward');
     });
 
-    it('Выбрасывает ошибку, если входной параметр не строка', () => {
+    it('Throws an error if input is not a string', () => {
       expect(() => reverseString(true)).to.throw("Input must be a string");
     });
   });
 
   describe('isPalindrome', () => {
-    it("Определяет палиндромы", () => {
+    it("Returns true for palindromes", () => {
       expect(isPalindrome('madam')).to.be.true;
     });
 
-    it("Не определяет как палиндром ", () => {
+    it("Returns false for non-palindromes", () => {
       expect(isPalindrome('hello')).to.be.false;
     });
 
-    it('Выбрасывает ошибку, если входной параметр не строка', () => {
+    it('Throws an error if input is not a string', () => {
       expect(() => isPalindrome(123)).to.throw("Input must be a string");
     });
   });

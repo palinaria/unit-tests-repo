@@ -3,28 +3,27 @@ import { checkStudentKnowledge } from '../src/studentKnowledgeCheckerUtil.js';
 
 
 describe('Student Knowledge Checker', () => {
-  it("Возвращает true для правильных ответов", () => {
+  it("Returns true for correct answers", () => {
     const studentAnswers = { q1: 'a1', q2: 'a2' };
     const correctAnswers = { q1: 'a1', q2: 'a2' };
     expect(checkStudentKnowledge(studentAnswers, correctAnswers)).to.be.true;
   });
 
-  it("Возвращает false для неправильных ответов", () => {
+  it("Returns false for incorrect answers", () => {
     const studentAnswers = { q1: 'a1', q2: 'wrong' };
     const correctAnswers = { q1: 'a1', q2: 'a2' };
     expect(checkStudentKnowledge(studentAnswers, correctAnswers)).to.be.false;
   });
 
-  it("Возвращает false, если количество ключей разное", () => {
+  it("Returns false if the number of keys is different", () => {
     const studentAnswers = { q1: 'a1', q2: 'a2', q3: 'a3' };
     const correctAnswers = { q1: 'a1', q2: 'a2' };
     expect(checkStudentKnowledge(studentAnswers, correctAnswers)).to.be.false;
   });
 
-  it("Возвращает false, если ключи не совпадают", () => {
+  it("Returns false if the keys do not match", () => {
     const studentAnswers = { q1: 'a1', q3: 'a3' };
     const correctAnswers = { q1: 'a1', q2: 'a2' };
     expect(checkStudentKnowledge(studentAnswers, correctAnswers)).to.be.false;
   });
-
 });

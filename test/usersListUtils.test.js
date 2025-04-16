@@ -3,7 +3,7 @@ import { filterUsersByAge, sortUsersByName, findUserById, isEmailTaken } from '.
 
 describe('Users List Utils', () => {
   describe('filterUsersByAge', () => {
-    it("Фильтрует пользователей по возрасту", () => {
+    it("Filters users by age range", () => {
       const users = [
         { id: 1, age: 20 },
         { id: 2, age: 25 },
@@ -15,13 +15,13 @@ describe('Users List Utils', () => {
       ]);
     });
 
-    it('Выбрасывает ошибку, если входной параметр не массив', () => {
+    it('Throws an error if input is not an array', () => {
       expect(() => filterUsersByAge('not array', 20, 30)).to.throw('Users must be an array');
     });
   });
 
   describe('sortUsersByName', () => {
-    it("Сортирует пользователей по имени", () => {
+    it("Sorts users by name", () => {
       const users = [
         { id: 1, name: 'John' },
         { id: 2, name: 'Alice' },
@@ -34,13 +34,13 @@ describe('Users List Utils', () => {
       ]);
     });
 
-    it('Выбрасывает ошибку, если входной параметр не массив', () => {
+    it('Throws an error if input is not an array', () => {
       expect(() => sortUsersByName('not array')).to.throw('Users must be an array');
     });
   });
 
   describe('findUserById', () => {
-    it("Находит пользователя по ID", () => {
+    it("Finds a user by ID", () => {
       const users = [
         { id: 1, name: 'John' },
         { id: 2, name: 'Alice' },
@@ -48,13 +48,13 @@ describe('Users List Utils', () => {
       expect(findUserById(users, 2)).to.deep.equal({ id: 2, name: 'Alice' });
     });
 
-    it('Выбрасывает ошибку, если входной параметр не массив', () => {
+    it('Throws an error if input is not an array', () => {
       expect(() => findUserById('not array', 1)).to.throw('Users must be an array');
     });
   });
 
   describe('isEmailTaken', () => {
-    it("Проверяет, существует ли пользователь с указанным email", () => {
+    it("Checks if a given email is already used by any user", () => {
       const users = [
         { id: 1, email: 'john@example.com' },
         { id: 2, email: 'alice@example.com' },
@@ -62,7 +62,7 @@ describe('Users List Utils', () => {
       expect(isEmailTaken(users, 'john@example.com')).to.be.true;
     });
 
-    it('Выбрасывает ошибку, если входной параметр не массив', () => {
+    it('Throws an error if input is not an array', () => {
       expect(() => isEmailTaken('not array', 'test@example.com')).to.throw('Users must be an array');
     });
   });
