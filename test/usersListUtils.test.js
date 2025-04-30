@@ -1,9 +1,9 @@
-import { expect } from "chai";
+import { expect } from 'chai';
 import { filterUsersByAge, sortUsersByName, findUserById, isEmailTaken } from '../src/usersListUtils.js';
 
 describe('Users List Utils', () => {
   describe('filterUsersByAge', () => {
-    it("Filters users by age range", () => {
+    it('Filters users by age range', () => {
       const users = [
         { id: 1, age: 20 },
         { id: 2, age: 25 },
@@ -21,7 +21,7 @@ describe('Users List Utils', () => {
   });
 
   describe('sortUsersByName', () => {
-    it("Sorts users by name", () => {
+    it('Sorts users by name', () => {
       const users = [
         { id: 1, name: 'John' },
         { id: 2, name: 'Alice' },
@@ -40,7 +40,7 @@ describe('Users List Utils', () => {
   });
 
   describe('findUserById', () => {
-    it("Finds a user by ID", () => {
+    it('Finds a user by ID', () => {
       const users = [
         { id: 1, name: 'John' },
         { id: 2, name: 'Alice' },
@@ -54,7 +54,7 @@ describe('Users List Utils', () => {
   });
 
   describe('isEmailTaken', () => {
-    it("Checks if a given email is already used by any user", () => {
+    it('Checks if a given email is already used by any user', () => {
       const users = [
         { id: 1, email: 'john@example.com' },
         { id: 2, email: 'alice@example.com' },
